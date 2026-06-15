@@ -1,0 +1,533 @@
+/* main.css - تنسيق صفحة الدخول والتسجيل (موحد مع dashboard.css) */
+
+/* ===== المتغيرات الأساسية للمشروع الأكاديمي (UNIFIED DESIGN SYSTEM) ===== */
+:root {
+    /* Backgrounds */
+    --bg:          #f8fafc;
+    --bg-2:        #ffffff;
+    --bg-light:    #f1f5f9;
+    --glass-bg:    rgba(255, 255, 255, 0.85);
+
+    /* Surfaces */
+    --sidebar:     #0f172a;
+    --card:        #ffffff;
+
+    /* Borders */
+    --border:      #e2e8f0;
+    --border-light: #e2e8f0;
+
+    /* Brand Colors */
+    --primary:     #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-dim: #eff6ff;
+
+    /* Semantic Colors */
+    --green:       #10b981;
+    --green-dim:   #f0fdf4;
+    --purple:      #8b5cf6;
+    --purple-dim:  #f5f3ff;
+    --red:         #ef4444;
+    --red-dim:     #fef2f2;
+
+    /* Typography */
+    --text:        #334155;
+    --text-dark:   #0f172a;
+    --muted:       #64748b;
+
+    /* Layout */
+    --radius:      0.5rem;
+    --radius-lg:   1rem;
+    --shadow:      0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.02);
+    --shadow-lg:   0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ===== التصفير العام ===== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    overflow-x: hidden;
+}
+
+/* Smooth transitions on interactive elements */
+a, button, input, select, textarea {
+    transition: all 0.15s ease-in-out;
+}
+
+/* ===== بطاقة الدخول والتسجيل ===== */
+.login-card {
+    width: min(480px, 100%);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.75rem 2.25rem;
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===== الترويسة ===== */
+.login-header {
+    text-align: center;
+    margin-bottom: 2.25rem;
+}
+
+.login-header .logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    background-color: #eff6ff;
+    border-radius: 50%;
+    font-size: 1.75rem;
+    color: var(--primary);
+    margin-bottom: 1.25rem;
+    border: 2px solid #bfdbfe;
+}
+
+.login-header h1 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.65rem;
+    font-family: 'Oswald', 'Bebas Neue', 'Aref Ruqaa Ink', system-ui, sans-serif;
+}
+
+.login-header p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* ===== التنبيهات ===== */
+.alert {
+    padding: 1.1rem 1.35rem;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-weight: 600;
+}
+
+.alert-danger {
+    background-color: var(--red-dim);
+    border-color: #fecaca;
+    color: #7f1d1d;
+}
+
+.alert-danger i {
+    font-size: 1.1rem;
+}
+
+.alert-success {
+    background-color: var(--green-dim);
+    border-color: #bbf7d0;
+    color: #065f46;
+}
+
+.alert-success i {
+    font-size: 1.1rem;
+}
+
+/* ===== النماذج والحقول ===== */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.65rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.form-group label i {
+    margin-left: 0.35rem;
+    color: var(--primary);
+}
+
+.form-group input,
+.form-select,
+.form-group select {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    background-color: #ffffff;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.form-group input:hover,
+.form-select:hover,
+.form-group select:hover {
+    border-color: #cbd5e1;
+}
+
+.form-group input:focus,
+.form-select:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    background-color: #f8f9ff;
+}
+
+.form-group input[type="tel"] {
+    letter-spacing: 0.02em;
+}
+
+.form-group input::placeholder {
+    color: #cbd5e1;
+}
+
+.error-feedback {
+    color: var(--red);
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.45rem;
+    font-weight: 500;
+}
+
+.form-help {
+    display: block;
+    color: #64748b;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-left: 2.75rem;
+}
+
+.toggle-password {
+    position: absolute;
+    left: 12px;
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0.35rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.toggle-password:hover {
+    color: var(--primary);
+}
+
+.strength-meter {
+    margin-top: 0.65rem;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    width: 0%;
+    height: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-text {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.45rem;
+    display: block;
+}
+
+/* ===== الأزرار ===== */
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.9rem 1.75rem;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+    margin-top: 0.75rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===== التذييل ===== */
+.login-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border-light);
+    padding-top: 1.5rem;
+}
+
+.login-footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s ease-in-out;
+}
+
+.login-footer a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.login-footer .copyright {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+/* ===== Accessibility ===== */
+*:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    background: var(--primary);
+    color: #fff;
+    padding: 0.65rem 1.25rem;
+    border-radius: 0 0 var(--radius) var(--radius);
+    z-index: 999;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ===== التجاوب ===== */
+@media (max-width: 640px) {
+    body {
+        padding: 1.25rem;
+    }
+
+    .login-card {
+        width: 100%;
+        padding: 2rem 1.75rem;
+    }
+
+    .login-header .logo-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .login-header h1 {
+        font-size: 1.35rem;
+    }
+
+    .login-header p {
+        font-size: 0.9rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-select,
+    .form-group select {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-primary {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .alert {
+        padding: 0.9rem 1.1rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .login-footer {
+        margin-top: 1.5rem;
+        padding-top: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    .login-card {
+        padding: 1.75rem 1.35rem;
+    }
+
+    .login-header {
+        margin-bottom: 1.75rem;
+    }
+
+    .login-header .logo-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+    }
+
+    .login-header h1 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .login-header p {
+        font-size: 0.85rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.1rem;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-select,
+    .form-group select {
+        padding: 0.75rem 0.9rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-primary {
+        padding: 0.75rem 1.35rem;
+        font-size: 0.9rem;
+    }
+
+    .error-feedback {
+        font-size: 0.75rem;
+    }
+
+    .form-help {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        padding: 0.75rem;
+    }
+
+    .login-card {
+        width: 100%;
+        padding: 1.5rem 1.1rem;
+        border-radius: 0.375rem;
+    }
+
+    .login-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .login-header .logo-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .login-header h1 {
+        font-size: 1.1rem;
+    }
+
+    .login-header p {
+        font-size: 0.8rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .form-group input,
+    .form-select,
+    .form-group select {
+        padding: 0.7rem 0.85rem;
+        font-size: 0.85rem;
+    }
+
+    .btn-primary {
+        padding: 0.7rem 1.25rem;
+        font-size: 0.85rem;
+    }
+
+    .alert {
+        padding: 0.85rem 1rem;
+        font-size: 0.85rem;
+        gap: 0.65rem;
+    }
+
+    .login-footer {
+        font-size: 0.75rem;
+        margin-top: 1.25rem;
+    }
+}

@@ -1,0 +1,5 @@
+[2026-06-15 09:26:20] User=admin (ID:1) | Action=PAGE_ACCESS | Details=reports.php
+[2026-06-15 09:26:23] User=admin (ID:1) | Action=PAGE_ACCESS | Details=settings.php
+[2026-06-15 09:26:25] User=admin (ID:1) | Action=PAGE_ACCESS | Details=reports.php
+[2026-06-15 09:26:25] User=admin (ID:1) | Action=PAGE_ACCESS | Details=users.php
+[2026-06-15 09:27:01] User=admin (ID:1) | Action=PAGE_ACCESS | Details=settings.php
