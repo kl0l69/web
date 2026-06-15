@@ -7,7 +7,7 @@
 
 ---
 
-## About Me
+## About us
 Hi! we are **Students of Borg El Arab Technological University**,  in Egypt.  
 
 ---
